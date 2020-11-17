@@ -51,7 +51,29 @@ const NotesSection = styled.section`
   } 
 `;
 
-const CategorySection = styled.section``;
+const CategorySection = styled.section`
+    font-size: 24px;
+    > ul{
+      background: #c4c4c4;
+      display: flex;
+      > li{
+        width: 50%;
+        padding: 16px 0;
+        text-align: center;
+        position: relative;
+        &.selected::after{
+            content:'';
+            display: block;
+            height: 3px;
+            background: #333;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+        }
+      }
+    }
+`;
 
 const NumberPadSection = styled.section``;
 
@@ -59,6 +81,18 @@ const NumberPadSection = styled.section``;
 function Money() {
   return (
     <Layout>
+      <CategorySection>
+        <ul>
+          <li className="selected">
+            <Icon name="income"/>
+            收入
+          </li>
+          <li>
+            <Icon name="pay"/>
+            支出
+          </li>
+        </ul>
+      </CategorySection>
       <TagsSection>
         <ol>
           <li>
@@ -80,18 +114,9 @@ function Money() {
         <label>
           <span>备注:</span>
           <input type="text" placeholder="请添加备注"/>
+
         </label>
       </NotesSection>
-      <CategorySection>
-        <ul>
-          <li>
-            <Icon name="income"/>
-          </li>
-          <li>
-            <Icon name="pay"/>
-          </li>
-        </ul>
-      </CategorySection>
       <NumberPadSection>
         <div>100</div>
         <button>1</button>
