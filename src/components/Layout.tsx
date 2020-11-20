@@ -17,7 +17,7 @@ const Main = styled.div`
 const Layout = (props: any) => {
   return (
     <Wrapper>
-      <Main>
+      <Main className={props.className}>
         <h2>{props.children}</h2>
       </Main>
       <Nav/>
