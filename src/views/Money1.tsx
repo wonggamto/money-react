@@ -7,7 +7,7 @@ const TagsSection = styled.section`
     background: #FFF;
     display: flex;
     padding: 12px 0;
-    
+    flex-wrap: wrap;
     > .iconWrapper{
       display: flex;
       justify-content: center;
@@ -36,6 +36,7 @@ const NoteSection = styled.section`
     > label{
       display: inline-block;
       margin-left: 22px;
+      flex-grow: 1; 
       > input{
         display: block;
         width:100%;
@@ -137,6 +138,18 @@ function Money1() {
         </div>
       </CategorySection>
       <TagsSection>
+        <div className="iconWrapper">
+          <Icon name="gift"/>
+          <span>购物</span>
+        </div>
+        <div className="iconWrapper">
+          <Icon name="gift"/>
+          <span>购物</span>
+        </div>
+        <div className="iconWrapper">
+          <Icon name="gift"/>
+          <span>购物</span>
+        </div>
         <div className="iconWrapper">
           <Icon name="gift"/>
           <span>购物</span>

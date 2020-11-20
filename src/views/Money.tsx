@@ -76,6 +76,7 @@ const CategorySection = styled.section`
         }
       }
     }
+    
 `;
 
 const NumberPadSection = styled.section`
@@ -171,7 +172,6 @@ function Money() {
         <label>
           <span>备注:</span>
           <input type="text" placeholder="请添加备注"/>
-
         </label>
       </NotesSection>
       <NumberPadSection>
