@@ -11,6 +11,7 @@ import Tags from './views/Tags';
 import Statistics from './views/Statistics';
 import NoMatch from './views/NotMatch';
 import Money1 from './views/Money1';
+import {Money2} from './views/Money2';
 
 
 const AppWrapper = styled.div`
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/money1">
             <Money1/>
+          </Route>
+          <Route path="/money2">
+            <Money2/>
           </Route>
           <Route path="*">
             <NoMatch/>
