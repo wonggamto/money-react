@@ -1,26 +1,27 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import styled from 'styled-components';
 import {CategorySection} from '../components/CategorySection';
-const TagSection = styled.section``;
+import {TagSection} from '../components/TagSection';
+import Icon from '../components/Icon';
+import styled from 'styled-components';
+import {Output} from '../components/OutPut';
+import {TimeSection} from '../components/TimeSection';
 
-const OutPut = styled.section``;
 
-const TimeSection = styled.section``;
 
-const NoteSection = styled.section``;
 
-const NumberPad = styled.section``;
+// const NoteSection = styled.section``;
+//
+// const NumberPad = styled.section``;
 
-const MyLayout = styled(Layout)`
-`;
 
 function Money2() {
   return (
-    <MyLayout>
+    <div className="wrapper">
       <CategorySection/>
-
-    </MyLayout>
+      <TagSection/>
+      <Output/>
+      <TimeSection/>
+    </div>
   );
 }
 
