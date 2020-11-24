@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState, useRef} from 'react';
 import styled from 'styled-components';
 import Icon from '../../components/Icon';
 
@@ -20,17 +20,24 @@ const _NoteSection = styled.section`
     }
 `;
 
-const NoteSection:React.FunctionComponent = () =>{
-  const [note,setNote] =useState('')
+const NoteSection: React.FunctionComponent = () => {
+  const [note, setNote] = useState('');
+  const refInput = useRef<HTMLInputElement>(null);
+  const onBlur = () => {
+    if (refInput.current !== null) {
+      setNote(refInput.current.value);
+    }
+  };
   return (
     <_NoteSection>
       <Icon name="note"/>
       <input type="text" placeholder="请添加备注"
-             value={note}
-             onChange={(e)=>setNote(e.target.value)}
+             ref={refInput}
+             defaultValue = {note}
+             onBlur={onBlur}
       />
     </_NoteSection>
   );
-}
+};
 
 export {NoteSection};
