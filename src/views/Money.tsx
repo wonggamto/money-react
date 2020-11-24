@@ -3,7 +3,6 @@ import {CategorySection} from './Money/CategorySection';
 import {TagSection} from './Money/TagSection';
 import {Output} from './Money/OutPut';
 import {TimeSection} from './Money/TimeSection';
-import Icon from '../components/Icon';
 import {NoteSection} from './Money/NoteSection';
 import {NumberPadSection} from './Money/NumnberPadSection';
 
