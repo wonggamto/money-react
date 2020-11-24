@@ -34,30 +34,20 @@ const Wrapper = styled.section`
           margin: 4px 4px;
         }
       }
-      //> .income{
-      //  width: 50%;
-      //  height: 28px;
-      //  align-items: center;
-      //  justify-content: center;
-      //  padding-top: 4px;
-      //}
     }
-  
-    
-      
-    
 `;
 const CategorySection: React.FunctionComponent = () => {
+  const categoryMap = {'-': '支出', '+': '收入'};
   const [categoryList] = useState<('-' | '+')[]>(['-', '+']);
   const [category, setCategory] = useState('-');
-  const categoryMap = {'-': '支出', '+': '收入'};
   return (
     <Wrapper>
       <Icon name="back"/>
       <ul>
-        {categoryList.map(c=>
-          <li className={category === c ? 'selected' : ''}
-          onClick={() => {setCategory(c);}}>
+        {categoryList.map(c =>
+          <li key={c}
+              className={category === c ? 'selected' : ''}
+              onClick={() => {setCategory(c);}}>
             {categoryMap[c]}
           </li>
         )}

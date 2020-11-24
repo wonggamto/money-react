@@ -26,7 +26,7 @@ const Output: React.FunctionComponent = () => {
       <div className="icon">
         <Icon name="rmb"/>
       </div>
-      <div className="output">123456.7890</div>
+      <div className="output"></div>
     </_Output>
   );
 }
