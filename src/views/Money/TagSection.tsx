@@ -82,6 +82,7 @@ const Wrapper = styled.section`
               flex-direction: column;
               justify-content: center;
               align-items: center;
+              background: #F5F5F5;
               > span{
               margin: 4px 0;
               font-size: 12px;

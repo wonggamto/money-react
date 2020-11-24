@@ -6,7 +6,6 @@ import {TimeSection} from './Money/TimeSection';
 import {NoteSection} from './Money/NoteSection';
 import {NumberPadSection} from './Money/NumnberPadSection';
 
-
 function Money() {
   return (
     <div className="wrapper">
