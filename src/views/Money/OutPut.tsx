@@ -1,6 +1,6 @@
 import React from 'react';
-import Icon from './Icon';
 import styled from 'styled-components';
+import Icon from '../../components/Icon';
 
 const _Output = styled.section`
     background: #f5f5f5;
@@ -20,7 +20,7 @@ const _Output = styled.section`
     }
 `;
 
-function Output() {
+const Output: React.FunctionComponent = () => {
   return (
     <_Output>
       <div className="icon">

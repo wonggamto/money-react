@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Icon from './Icon';
+import Icon from '../../components/Icon';
 
 const _NoteSection = styled.section`
     height: 32px;
@@ -20,7 +20,7 @@ const _NoteSection = styled.section`
     }
 `;
 
-function NoteSection() {
+const NoteSection:React.FunctionComponent = () =>{
   return (
     <_NoteSection>
       <Icon name="note"/>

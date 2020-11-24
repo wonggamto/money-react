@@ -1,6 +1,6 @@
-import Icon from './Icon';
 import styled from 'styled-components';
 import React from 'react';
+import Icon from '../../components/Icon';
 
 const _CategorySection = styled.section`
     font-size: 18px;
@@ -46,7 +46,7 @@ const _CategorySection = styled.section`
       
     
 `;
-const CategorySection = () => {
+const CategorySection: React.FunctionComponent = () => {
   return (
     <_CategorySection>
       <Icon name="back"/>

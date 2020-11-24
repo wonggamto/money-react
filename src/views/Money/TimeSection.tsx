@@ -1,4 +1,4 @@
-import Icon from './Icon';
+import Icon from '../../components/Icon';
 import styled from 'styled-components';
 import React from 'react';
 
@@ -16,7 +16,7 @@ const _TimeSection = styled.section`
     }
 `;
 
-function TimeSection() {
+const TimeSection:React.FunctionComponent =() =>{
   return (
     <_TimeSection>
       <Icon name="calendar"/>
