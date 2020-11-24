@@ -11,7 +11,7 @@ const _TimeSection = styled.section`
     padding: 0 18px;
     
     > .dayTime{
-      font-size: 24px;
+      font-size: 12px;
       padding-left: 12px;
     }
 `;

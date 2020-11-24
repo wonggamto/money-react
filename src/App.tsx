@@ -6,12 +6,11 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import Money from './views/Money';
+import Money3 from './views/Money3';
 import Tags from './views/Tags';
 import Statistics from './views/Statistics';
 import NoMatch from './views/NotMatch';
-import Money1 from './views/Money1';
-import {Money2} from './views/Money2';
+import {Money} from './views/Money';
 
 
 const AppWrapper = styled.div`
@@ -31,12 +30,6 @@ function App() {
           </Route>
           <Route path="/statistics">
             <Statistics/>
-          </Route>
-          <Route path="/money1">
-            <Money1/>
-          </Route>
-          <Route path="/money2">
-            <Money2/>
           </Route>
           <Route path="*">
             <NoMatch/>
