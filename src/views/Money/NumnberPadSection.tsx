@@ -6,7 +6,7 @@ type Props={
   value:number,
   onChange:(value:number) => void;
 }
-const NumberPadSection: React.FunctionComponent<Props> = () => {
+const NumberPadSection: React.FunctionComponent<Props> = ({onChange}) => {
   const [output, _setOutput] = useState('0');
   const setOutput = (output:string)=>{
     if(output.length>16){
@@ -15,6 +15,7 @@ const NumberPadSection: React.FunctionComponent<Props> = () => {
       output='0';
     }
     _setOutput(output)
+    onChange(Number(output))
   }
   const onClickButtonWrapper = (e: React.MouseEvent) => {
     const text = (e.target as HTMLButtonElement).textContent;

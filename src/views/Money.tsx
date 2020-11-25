@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import {CategorySection} from './Money/CategorySection';
 import {TagSection} from './Money/TagSection';
 import {TimeSection} from './Money/TimeSection';
@@ -7,55 +7,33 @@ import {NumberPadSection} from './Money/NumnberPadSection';
 import {Output} from './Money/OutPut';
 
 type Category = '-' | '+';
+
 function Money() {
-  const [selected,setSelected] = useState({
-    tags:[] as string[],
-    note:'',
+  const [selected, setSelected] = useState({
+    tags: [] as string[],
+    note: '',
     category: '-' as Category,
-    amount:0
-  })
+    amount: 0
+  });
+  const onChange = (obj: Partial<typeof selected>) => {
+    setSelected({
+      ...selected,
+      ...obj
+    });
+  };
   return (
     <div className="wrapper">
-      {selected.tags.join(',')}
-      <hr/>
-      {selected.note}
-      <hr/>
-      {selected.amount}
       <CategorySection value={selected.category}
-                       onChange={(category)=>{
-                         setSelected({
-                           ...selected,
-                           category:category
-                         })
-                       }}
-      />
+                       onChange={(category) => onChange({category})}/>
       <TagSection value={selected.tags}
-                  onChange={(tags) => setSelected({
-                    ...selected,
-                    tags:tags
-                  })}/>
+                  onChange={(tags) => onChange({tags})}/>
       <Output value={selected.amount}
-              onChange={(amount)=>{
-                setSelected({
-                  ...selected,
-                  amount:amount
-                })
-              }}/>
+              onChange={(amount) => onChange({amount})}/>
       <TimeSection/>
       <NoteSection value={selected.note}
-                   onChange={(note) =>{
-                     setSelected({
-                       ...selected,
-                       note:note
-                     })
-                   }}/>
+                   onChange={(note) => onChange({note})}/>
       <NumberPadSection value={selected.amount}
-                             onChange={(amount)=>{
-                               setSelected({
-                                 ...selected,
-                                 amount:amount
-                               })
-                             }}/>
+                        onChange={(amount) => onChange({amount})}/>
     </div>
   );
 }
