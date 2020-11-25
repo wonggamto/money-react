@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React, {useState} from 'react';
 import Icon from '../../components/Icon';
+import { NavLink } from 'react-router-dom';
 
 const Wrapper = styled.section`
     font-size: 18px;
@@ -42,7 +43,9 @@ const CategorySection: React.FunctionComponent = () => {
   const [category, setCategory] = useState('-');
   return (
     <Wrapper>
-      <Icon name="back"/>
+      <NavLink to='/statistics'>
+        <Icon name="back"/>
+      </NavLink>
       <ul>
         {categoryList.map(c =>
           <li key={c}

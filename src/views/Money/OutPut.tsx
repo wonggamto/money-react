@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Icon from '../../components/Icon';
 
-const _Output = styled.section`
+const Wrapper= styled.section`
     background: #f5f5f5;
     display: flex;
     font-size: 22px;
@@ -22,12 +22,12 @@ const _Output = styled.section`
 
 const Output: React.FunctionComponent = () => {
   return (
-    <_Output>
+    <Wrapper>
       <div className="icon">
         <Icon name="rmb"/>
       </div>
       <div className="output"></div>
-    </_Output>
+    </Wrapper>
   );
 }
 

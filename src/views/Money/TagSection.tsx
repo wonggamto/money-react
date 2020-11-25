@@ -26,7 +26,8 @@ const TagSection: React.FunctionComponent = (props) => {
     <Wrapper>
       <ol>
         {tags.map(tag =>
-          <li onClick={() => onToggleTag(tag)}
+          <li key={tag}
+            onClick={() => onToggleTag(tag)}
           className={getClass(tag)}>
             <Icon name={tag}/>
             <span>{tag}</span>
