@@ -2,7 +2,7 @@ import React, {useState, useRef} from 'react';
 import styled from 'styled-components';
 import Icon from '../../components/Icon';
 
-const _NoteSection = styled.section`
+const Wrapper = styled.section`
     height: 32px;
     background: #FFF;
     display: flex;
@@ -19,25 +19,26 @@ const _NoteSection = styled.section`
       font-size: 12px;
     }
 `;
-
-const NoteSection: React.FunctionComponent = () => {
-  const [note, setNote] = useState('');
+type Props = {
+  value:string;
+  onChange:(value:string) => void;
+}
+const NoteSection: React.FunctionComponent<Props> = (props) => {
+  const note = props.value
   const refInput = useRef<HTMLInputElement>(null);
   const onBlur = () => {
     if (refInput.current !== null) {
-      setNote(refInput.current.value);
+      props.onChange(refInput.current.value);
     }
   };
   return (
-    <_NoteSection>
+    <Wrapper>
       <Icon name="note"/>
       <input type="text" placeholder="请添加备注"
              ref={refInput}
              defaultValue = {note}
-             onBlur={onBlur}
-      />
-    </_NoteSection>
+             onBlur={onBlur}/>
+    </Wrapper>
   );
 };
-
 export {NoteSection};

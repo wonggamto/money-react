@@ -2,7 +2,11 @@ import React, {useState} from 'react';
 import Icon from '../../components/Icon';
 import {Wrapper} from './NumberPadSection/Wrapper';
 import {generateOutput} from './NumberPadSection/generateOutput';
-const NumberPadSection: React.FunctionComponent = () => {
+type Props={
+  value:number,
+  onChange:(value:number) => void;
+}
+const NumberPadSection: React.FunctionComponent<Props> = () => {
   const [output, _setOutput] = useState('0');
   const setOutput = (output:string)=>{
     if(output.length>16){
