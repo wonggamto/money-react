@@ -24,7 +24,11 @@ const NavWrapper = styled.div`
         height: 24px;
         }
         &.selected{
-          color:red;
+          > .icon{
+            border: 1px solid red;
+            background: #F8FAFB;
+            
+          }
         }        
       } 
     }

@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Icon from '../../components/Icon';
 import {useTags} from '../../useTags';
 
 type Props = {
-  value:string[];
-  onChange: (selected:string[])=> void;
+  value: string[];
+  onChange: (selected: string[]) => void;
 }
 const TagSection: React.FunctionComponent<Props> = (props) => {
-  const{tags,setTags} = useTags()
+  const {tags, setTags} = useTags();
   const selectedTags = props.value;
   const onAddTag = () => {
     const tagName = window.prompt('新标签的名称为');
@@ -17,23 +17,23 @@ const TagSection: React.FunctionComponent<Props> = (props) => {
     }
   };
   const onToggleTag = (tag: string) => {
-      const index = selectedTags.indexOf(tag)
-      if(index >= 0){
-        //如果tag已经被选中，就复制所有没有被选中的tag作为新的selectedTag
-        props.onChange(selectedTags.filter(t => t !==tag))
-        console.log(111);
-      }else{
-        props.onChange([...selectedTags,tag])
-      }
+    const index = selectedTags.indexOf(tag);
+    if (index >= 0) {
+      //如果tag已经被选中，就复制所有没有被选中的tag作为新的selectedTag
+      props.onChange(selectedTags.filter(t => t !== tag));
+      console.log(111);
+    } else {
+      props.onChange([...selectedTags, tag]);
+    }
   };
-  const getClass = (tag:string) =>selectedTags.indexOf(tag)>=0 ?'selected':''
+  const getClass = (tag: string) => selectedTags.indexOf(tag) >= 0 ? 'selected' : '';
   return (
     <Wrapper>
       <ol>
         {tags.map(tag =>
           <li key={tag}
-            onClick={() => onToggleTag(tag)}
-          className={getClass(tag)}>
+              onClick={() => onToggleTag(tag)}
+              className={getClass(tag)}>
             <Icon name={tag}/>
             <span>{tag}</span>
           </li>
@@ -72,6 +72,9 @@ const Wrapper = styled.section`
               margin: 4px 0;
               font-size: 12px;
               text-align: center;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
             &.selected{
               background: #DDD;
