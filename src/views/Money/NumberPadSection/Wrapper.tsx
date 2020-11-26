@@ -21,7 +21,9 @@ const Wrapper = styled.section`
       }
        > .ok{
           height: 136px;
-          float: right;    
+          float: right;  
+          background: #464699;  
+          color: #ffffff;
         }
         >.zero{
           width:50%;

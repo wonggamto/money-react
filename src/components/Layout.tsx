@@ -19,8 +19,8 @@ const Layout = (props: any) => {
     <Wrapper>
       <Main className={props.className}>
          {props.children}
+         <Nav/>
       </Main>
-      <Nav/>
     </Wrapper>
   );
 };

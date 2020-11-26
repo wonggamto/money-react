@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import Icon from '../../components/Icon';
+import {useTags} from '../../useTags';
 
 type Props = {
   value:string[];
   onChange: (selected:string[])=> void;
 }
 const TagSection: React.FunctionComponent<Props> = (props) => {
-  const [tags, setTags] = useState<string[]>(['transportation', 'gas', 'medical', 'gift']);
+  const{tags,setTags} = useTags()
   const selectedTags = props.value;
   const onAddTag = () => {
     const tagName = window.prompt('新标签的名称为');

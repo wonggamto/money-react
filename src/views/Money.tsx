@@ -5,8 +5,15 @@ import {TimeSection} from './Money/TimeSection';
 import {NoteSection} from './Money/NoteSection';
 import {NumberPadSection} from './Money/NumnberPadSection';
 import {Output} from './Money/OutPut';
+import styled from 'styled-components';
 
 type Category = '-' | '+';
+
+const Wrapper= styled.section`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
 
 function Money() {
   const [selected, setSelected] = useState({
@@ -22,7 +29,7 @@ function Money() {
     });
   };
   return (
-    <div className="wrapper">
+    <Wrapper>
       <CategorySection value={selected.category}
                        onChange={(category) => onChange({category})}/>
       <TagSection value={selected.tags}
@@ -34,7 +41,7 @@ function Money() {
                    onChange={(note) => onChange({note})}/>
       <NumberPadSection value={selected.amount}
                         onChange={(amount) => onChange({amount})}/>
-    </div>
+    </Wrapper>
   );
 }
 
