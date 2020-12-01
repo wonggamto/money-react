@@ -4,6 +4,7 @@ import {useTags} from '../useTags';
 import {TopBar} from './TopBar';
 import styled from 'styled-components';
 import Icon from '../components/Icon';
+import { Link } from 'react-router-dom';
 
 const TagList = styled.ol`
   font-size: 32px;
@@ -47,7 +48,9 @@ function Tags() {
       <TagList>
         {tags.map(tag =>
           <li>
-            <Icon name={tag}/>
+            <Link to={'/tags/' + tag}>
+              <Icon name={tag}/>
+            </Link>
           </li>
         )}
       </TagList>
