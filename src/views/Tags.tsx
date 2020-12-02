@@ -47,8 +47,8 @@ function Tags() {
       <TopBar/>
       <TagList>
         {tags.map(tag =>
-          <li>
-            <Link to={'/tags/' + tag}>
+          <li key={tag.id}>
+            <Link to={'/tags/' + tag.id}>
               <Icon name={tag.name}/>
             </Link>
           </li>
@@ -59,4 +59,4 @@ function Tags() {
   );
 }
 
-export default Tags;
+export {Tags};

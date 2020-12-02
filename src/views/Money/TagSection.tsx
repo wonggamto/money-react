@@ -34,7 +34,7 @@ const TagSection: React.FunctionComponent<Props> = (props) => {
               onClick={() => onToggleTag(tag.id)}
               className={getClass(tag.id)}>
             <Icon name={tag.name}/>
-            <span>{tag}</span>
+            <span>{tag.name}</span>
           </li>
         )}
         <button onClick={onAddTag}>

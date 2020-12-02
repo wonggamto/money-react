@@ -6,11 +6,11 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import Tags from './views/Tags';
 import Statistics from './views/Statistics';
 import NoMatch from './views/NotMatch';
 import {Money} from './views/Money';
 import {Tag} from './views/Tag';
+import {Tags} from './views/Tags';
 
 
 const AppWrapper = styled.div`

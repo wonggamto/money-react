@@ -5,7 +5,7 @@ import Icon from '../components/Icon';
 const Wrapper = styled.div`
     height:68px;
     background: #464699;
-    font-size: 68px;
+    font-size: 120px;
     display: flex;
     flex-grow: 1;
     justify-content: center;
