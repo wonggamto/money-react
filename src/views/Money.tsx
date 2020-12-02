@@ -17,7 +17,7 @@ const Wrapper= styled.section`
 
 function Money() {
   const [selected, setSelected] = useState({
-    tags: [] as string[],
+    tagIds: [] as number[],
     note: '',
     category: '-' as Category,
     amount: 0
@@ -32,8 +32,8 @@ function Money() {
     <Wrapper>
       <CategorySection value={selected.category}
                        onChange={(category) => onChange({category})}/>
-      <TagSection value={selected.tags}
-                  onChange={(tags) => onChange({tags})}/>
+      <TagSection value={selected.tagIds}
+                  onChange={(tagIds) => onChange({tagIds})}/>
       <Output value={selected.amount}
               onChange={(amount) => onChange({amount})}/>
       <TimeSection/>

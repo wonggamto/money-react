@@ -41,7 +41,7 @@ const Button = styled.button`
 `;
 
 function Tags() {
-  const {tags, setTags} = useTags();
+  const {tags} = useTags();
   return (
     <Layout>
       <TopBar/>
@@ -49,7 +49,7 @@ function Tags() {
         {tags.map(tag =>
           <li>
             <Link to={'/tags/' + tag}>
-              <Icon name={tag}/>
+              <Icon name={tag.name}/>
             </Link>
           </li>
         )}

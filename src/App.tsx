@@ -37,7 +37,7 @@ function App() {
           <Route exact path="*">
             <NoMatch/>
           </Route>
-          <Redirect exact from="/" to="/money"/>
+          <Redirect exact from="/" to="/statistics"/>
         </Switch>
       </Router>
     </AppWrapper>

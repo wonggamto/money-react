@@ -4,37 +4,36 @@ import Icon from '../../components/Icon';
 import {useTags} from '../../useTags';
 
 type Props = {
-  value: string[];
-  onChange: (selected: string[]) => void;
+  value: number[];
+  onChange: (selected: number[]) => void;
 }
 const TagSection: React.FunctionComponent<Props> = (props) => {
   const {tags, setTags} = useTags();
-  const selectedTags = props.value;
+  const selectedTagIds = props.value;
   const onAddTag = () => {
     const tagName = window.prompt('新标签的名称为');
     if (tagName !== null) {
-      setTags([...tags, tagName]);
+      setTags([...tags, {id:Math.random(),name:tagName}]);
     }
   };
-  const onToggleTag = (tag: string) => {
-    const index = selectedTags.indexOf(tag);
+  const onToggleTag = (tagId: number) => {
+    const index = selectedTagIds.indexOf(tagId);
     if (index >= 0) {
       //如果tag已经被选中，就复制所有没有被选中的tag作为新的selectedTag
-      props.onChange(selectedTags.filter(t => t !== tag));
-      console.log(111);
+      props.onChange(selectedTagIds.filter(t => t !== tagId));
     } else {
-      props.onChange([...selectedTags, tag]);
+      props.onChange([...selectedTagIds, tagId]);
     }
   };
-  const getClass = (tag: string) => selectedTags.indexOf(tag) >= 0 ? 'selected' : '';
+  const getClass = (tagId: number) => selectedTagIds.indexOf(tagId) >= 0 ? 'selected' : '';
   return (
     <Wrapper>
       <ol>
         {tags.map(tag =>
-          <li key={tag}
-              onClick={() => onToggleTag(tag)}
-              className={getClass(tag)}>
-            <Icon name={tag}/>
+          <li key={tag.id}
+              onClick={() => onToggleTag(tag.id)}
+              className={getClass(tag.id)}>
+            <Icon name={tag.name}/>
             <span>{tag}</span>
           </li>
         )}
