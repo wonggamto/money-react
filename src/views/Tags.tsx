@@ -1,44 +1,55 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import {useTags} from '../useTags';
+import Layout from 'components/Layout';
+import {useTags} from 'useTags';
 import {TopBar} from './TopBar';
 import styled from 'styled-components';
-import Icon from '../components/Icon';
-import { Link } from 'react-router-dom';
+import Icon from 'components/Icon';
+import {Link} from 'react-router-dom';
 
 const TagList = styled.ol`
-  font-size: 32px;
+  background: #FFF;
   display: flex;
   justify-content: space-between;
-  padding: 12px 0;
-  flex-wrap: nowrap;
+  align-items: center;
+  padding: 12px 24px;
+  flex-wrap: wrap;
+  
+    
   > li{
-    list-style: none;
-    width:68px;
-    height: 68px;
-    margin: 0 12px;
+    background: #f5f5f5;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #F5F5F5;
-    border-radius: 30%;
-  }
-  > button{
-              
-`;
-const Button = styled.button`
     width: 68px;
     height: 68px;
-    font-size: 32px;
-    margin: 4px 6px;
-    border: none;
-    border-radius: 30%; 
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 32px;
+    padding: 0 24px;
+    border-radius: 30%;
+    margin: 4px 6px ;
+    overflow: hidden;
+    > .oneLine{
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+    font-size: 12px;
+    text-align: center;
+   
+    }
+  }
+  > button{
+    width: 68px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    border: none;
+    border-radius: 30%;
     background: #F5F5F5;
+    margin: 4px 6px;
+    }
 `;
+
 
 function Tags() {
   const {tags} = useTags();
@@ -51,10 +62,11 @@ function Tags() {
             <Link to={'/tags/' + tag.id}>
               <Icon name={tag.name}/>
             </Link>
+            <span className="oneLine">{tag.name}111111fsfas111dsfasfasfs111111111</span>
           </li>
         )}
+        <button className="add"><Icon name="add"/></button>
       </TagList>
-      <Button><Icon name="add"/></Button>
     </Layout>
   );
 }

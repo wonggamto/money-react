@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Icon from '../../components/Icon';
-import {useTags} from '../../useTags';
-import {createId} from '../../lib/createId';
+import Icon from 'components/Icon';
+import {useTags} from 'useTags';
+import {createId} from 'lib/createId';
 
 type Props = {
   value: number[];
