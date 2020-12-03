@@ -33,3 +33,13 @@ button{
   display: block;
   clear: both;
 }
+.oneLine{
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+
+}

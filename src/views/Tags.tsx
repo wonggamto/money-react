@@ -7,47 +7,36 @@ import Icon from 'components/Icon';
 import {Link} from 'react-router-dom';
 
 const TagList = styled.ol`
-  background: #FFF;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 24px;
   flex-wrap: wrap;
-  
-    
-  > li{
-    background: #f5f5f5;
+  padding: 12px 24px;
+  overflow: scroll;
+ > li{
+    background: #F5F5F5;
     display: flex;
-    width: 68px;
-    height: 68px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 32px;
-    padding: 0 24px;
-    border-radius: 30%;
-    margin: 4px 6px ;
-    overflow: hidden;
-    > .oneLine{
-    white-space: nowrap;
-    text-overflow: ellipsis; 
-    font-size: 12px;
-    text-align: center;
-   
-    }
-  }
-  > button{
+    flex-wrap: wrap;
     width: 68px;
     height: 68px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 32px;
-    border: none;
+    margin: 6px 6px;
     border-radius: 30%;
-    background: #F5F5F5;
-    margin: 4px 6px;
-    }
+  }
+    > button{
+      width: 68px;
+      height: 68px;
+      font-size: 32px;
+      margin: 4px 6px;
+      border: none;
+      border-radius: 30%; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #F5F5F5;
+   }
 `;
 
 
@@ -62,7 +51,7 @@ function Tags() {
             <Link to={'/tags/' + tag.id}>
               <Icon name={tag.name}/>
             </Link>
-            <span className="oneLine">{tag.name}111111fsfas111dsfasfasfs111111111</span>
+            <span className="oneLine">{tag.name}</span>
           </li>
         )}
         <button className="add"><Icon name="add"/></button>

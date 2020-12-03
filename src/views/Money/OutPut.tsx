@@ -25,17 +25,6 @@ type Props ={
 }
 const Output: React.FunctionComponent<Props> = (props) => {
   const output = props.value.toString()
-  const setOutput = (output:string)=>{
-    let value
-    if(output.length > 16){
-      value = parseFloat(output.slice(0,16));
-    }else if(output.length === 0){
-      value = 0;
-    }else{
-      value = parseFloat(output)
-    }
-    props.onChange(value)
-  }
   return (
     <Wrapper>
       <div className="icon">
