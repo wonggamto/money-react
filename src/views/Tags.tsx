@@ -38,8 +38,6 @@ const TagList = styled.ol`
       background: #F5F5F5;
    }
 `;
-
-
 function Tags() {
   const {tags} = useTags();
   return (
@@ -51,7 +49,7 @@ function Tags() {
             <Link to={'/tags/' + tag.id}>
               <Icon name={tag.name}/>
             </Link>
-            <span className="oneLine">{tag.name}</span>
+            <span className="oneLine">{tag.id}:{tag.name}</span>
           </li>
         )}
         <button className="add"><Icon name="add"/></button>
