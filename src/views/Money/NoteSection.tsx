@@ -22,22 +22,21 @@ const Wrapper = styled.section`
 type Props = {
   value:string;
   onChange:(value:string) => void;
-}
+  input:string;
+  ref:any;
+} & React.InputHTMLAttributes<HTMLInputElement>
 const NoteSection: React.FunctionComponent<Props> = (props) => {
   const note = props.value
-  const refInput = useRef<HTMLInputElement>(null);
-  const onBlur = () => {
-    if (refInput.current !== null) {
-      props.onChange(refInput.current.value);
-    }
+  const onChange:ChanveEventHandler<HTMLInputElement> = (e) => {
+      props.onChange(e.target.value)
   };
   return (
     <Wrapper>
       <Icon name="note"/>
-      <input type="text" placeholder="请添加备注"
+      <input type="text" placeholder={props.placeholder}
              ref={refInput}
-             defaultValue = {note}
-             onBlur={onBlur}/>
+             value = {note}
+             onChange={onChange}/>
     </Wrapper>
   );
 };
